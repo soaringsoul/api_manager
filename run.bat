@@ -1,0 +1,2 @@
+workon api_manager_venv
+fabmanager run
