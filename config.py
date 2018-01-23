@@ -6,7 +6,7 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 SECRET_KEY = '\2\1thisismyscretkey\1\2\e\y\y\h'
 
 # The SQLAlchemy connection string.
-SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:123456@localhost/api_manager'
+SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:adas123456@localhost/api_manager'
 
 # Flask-WTF flag for CSRF
 CSRF_ENABLED = True
