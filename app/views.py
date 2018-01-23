@@ -83,7 +83,6 @@ class DataServiceModelView(ModelView):
     description_columns = {'name': '数据接口名'}
 
 
-
 # 定义数据服务商视图
 class ProviderGroupModelView(ModelView):
     datamodel = SQLAInterface(Providers)
@@ -158,10 +157,10 @@ appbuilder.add_view(ProviderGroupModelView,"数据供应商",
 appbuilder.add_view(ApiGroupModelView, "接口分组",
                     icon="fa-database", category="数据分组-必填项")
 
-appbuilder.add_view(PresentSalesModelView, "当前价格",
+appbuilder.add_view(PresentSalesModelView, "当前采购价格",
                     icon="fa-database", category="数据分组-必填项")
 
-appbuilder.add_view(SalesModelView, "价格",
+appbuilder.add_view(SalesModelView, "服务商报价",
                     icon="fa-database", category="数据分组-选填项")
 
 appbuilder.add_view(SalesMethodModelView, "计费方式",
@@ -176,7 +175,7 @@ appbuilder.add_view(ApplicationPlatformModeView, "Api应用平台",
 appbuilder.add_view(ApiTypeModelView, "Api适用对象",
                     icon="fa-database", category="数据分组-必填项")
 
-appbuilder.add_view(SignContractModelView, "合同事宜",
+appbuilder.add_view(SignContractModelView, "合同签订事宜",
                     icon="fa-database", category="数据分组-必填项")
 
 appbuilder.add_view(RemarksModelView, "备注",
