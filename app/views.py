@@ -53,7 +53,7 @@ class DataServiceModelView(ModelView):
         (
             '基本信息',
             {'fields': ['name', 'provider', 'input_params', 'output_result', 'function', 'api_group',
-                        'sales', 'sales_method']}),
+                        'present_sales', 'sales', 'sales_method']}),
         (
             '数据接口应用信息',
             {'fields': ['application_plat', 'api_type', 'sign_contract', 'remarks', 'begin_date',
