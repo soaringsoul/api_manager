@@ -63,9 +63,9 @@ class DataServiceModelView(ModelView):
         (
             '基本信息',
             {'fields': ['name', 'provider', 'input_params', 'output_result', 'function', 'api_group', 'sales',
-                        'sales_method']}),
+                        'sales_method'], 'expanded': True}),
         (
-            '数据接口应用信息',
+            '应用信息',
             {'fields': ['present_sales', 'application_plat', 'api_type', 'sign_contract', 'remarks', 'begin_date',
                         'end_date'], 'expanded': True}),
     ]
@@ -88,63 +88,83 @@ class ProviderGroupModelView(ModelView):
     datamodel = SQLAInterface(Providers)
     related_views = [DataServiceModelView]
     list_title = '数据供应商列表'
+    add_title = "添加数据供应商"
 
 
 # 定义api分组视图
 class ApiGroupModelView(ModelView):
     datamodel = SQLAInterface(Apigroup)
     related_views = [DataServiceModelView]
+    list_title = '数据产品分类'
+    add_title = "添加数据产品分类"
 
 
 # 定义价格
 class SalesModelView(ModelView):
     datamodel = SQLAInterface(Sales)
     related_views = [DataServiceModelView]
+    list_title = '服务商报价'
+    add_title = "添加%s" % list_title
 
 
 # 定义当前使用的价格
 class PresentSalesModelView(ModelView):
     datamodel = SQLAInterface(Presentsales)
     related_views = [DataServiceModelView]
+    list_title = '采购价格'
+    add_title = "添加%s" % list_title
 
 # 定义计费方式视图
 class SalesMethodModelView(ModelView):
     datamodel = SQLAInterface(Salesmethod)
     related_views = [DataServiceModelView]
+    list_title = '计费方式'
+    add_title = "添加%s" % list_title
 
 
 # 定义api功能分组视图
 class FunctionModelView(ModelView):
     datamodel = SQLAInterface(Function)
     related_views = [DataServiceModelView]
+    list_title = '数据产品用途'
+    add_title = "添加%s" % list_title
 
 
 # 定义应用平台视图
 class ApplicationPlatformModeView(ModelView):
     datamodel = SQLAInterface(Applicationplatform)
     related_views = [DataServiceModelView]
+    list_title = '应用平台'
+    add_title = "添加%s" % list_title
 
 
 # 定义适用类型视图
 class ApiTypeModelView(ModelView):
     datamodel = SQLAInterface(Apitype)
     related_views = [DataServiceModelView]
+    list_title = '适用对象'
+    add_title = "添加%s" % list_title
 
 
 # 定义是否签订合同视图
 class SignContractModelView(ModelView):
     datamodel = SQLAInterface(Signcontract)
     related_views = [DataServiceModelView]
+    list_title = '采购合同事宜'
+    add_title = "添加%s" % list_title
 
 
 class RemarksModelView(ModelView):
     datamodel = SQLAInterface(Remarks)
     related_views = [DataServiceModelView]
+    list_title = '备注'
+    add_title = "添加%s" % list_title
 
 
 class DataServiceLinkModelView(DataServiceModelView):
-    list_title = '数据接口列表'
+    list_title = '数据接口'
     list_widget = ListLinkWidget
+    add_title = "添加%s" % list_title
 
 
 db.create_all()
