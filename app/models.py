@@ -92,6 +92,21 @@ class Presentsales(Model):
     def __repr__(self):
         return self.name
 
+# 定义数据时效性
+class Updatespeed(Model):
+    id = Column(Integer, primary_key=True)
+    name = Column(String(500), nullable=False)
+
+    def __repr__(self):
+        return self.name
+
+# 定义数据接口覆盖范围
+class Coverage(Model):
+    id = Column(Integer, primary_key=True)
+    name = Column(String(500), nullable=False)
+
+    def __repr__(self):
+        return self.name
 
 def today():
     return datetime.datetime.today().strftime('%Y-%m-%d')
@@ -142,6 +157,16 @@ class DataService(Model):
     # 定义接口适用类型，个人还是企业
     api_type_id = Column(Integer, ForeignKey('apitype.id'), nullable=False)
     api_type = relationship("Apitype")
+
+    # 定义数据时效性
+    update_speed_id = Column(Integer, ForeignKey('updatespeed.id'), nullable=True)
+    update_speed = relationship("Updatespeed")
+
+    # 定义数据覆盖范围
+    coverage_id = Column(Integer, ForeignKey('coverage.id'), nullable=True)
+    coverage = relationship("Coverage")
+
+
     # 是否签订合同
     sign_contract_id = Column(Integer, ForeignKey('signcontract.id'), nullable=False)
     sign_contract = relationship("Signcontract")
