@@ -126,17 +126,15 @@ class DataService(Model):
 
 
     # 定义当前价格
-    present_sales_id = Column(Integer, ForeignKey('presentsales.id'), nullable=False)
-    present_sales = relationship("Presentsales")
+    present_sales = Column(String(500), unique=False, nullable=False)
 
     # 定义字段显示样式，该字段不会真正写入后台数据库
     @renders('name')
     def api_name(self):
         # will render this columns as bold on ListWidget
         return Markup('<b>' + self.name + '</b>')
-
-    sales_id = Column(Integer, ForeignKey('sales.id'), nullable=False)
-    sales = relationship("Sales")
+    # 服务商报价
+    sales = Column(String(500), unique=False, nullable=False)
     # 功能
     function_id = Column(Integer, ForeignKey('function.id'), nullable=False)
     function = relationship("Function")
@@ -171,8 +169,7 @@ class DataService(Model):
     sign_contract_id = Column(Integer, ForeignKey('signcontract.id'), nullable=False)
     sign_contract = relationship("Signcontract")
     # 特殊情况备注
-    remarks_id = Column(Integer, ForeignKey('remarks.id'), nullable=True)
-    remarks = relationship('Remarks')
+    remarks = Column(String(1000), unique=False, nullable=False)
     # 定义日期
     begin_date = Column(Date, default=today)
     end_date = Column(Date, default=today_after_a_year)

@@ -106,11 +106,11 @@ class ApiGroupModelView(ModelView):
 
 
 # 定义价格
-class SalesModelView(ModelView):
-    datamodel = SQLAInterface(Sales)
-    related_views = [DataServiceModelView]
-    list_title = '服务商报价'
-    add_title = "添加%s" % list_title
+# class SalesModelView(ModelView):
+#     datamodel = SQLAInterface(Sales)
+#     related_views = [DataServiceModelView]
+#     list_title = '服务商报价'
+#     add_title = "添加%s" % list_title
 
 
 # 定义当前使用的价格
@@ -200,11 +200,6 @@ appbuilder.add_view(ProviderGroupModelView, "数据供应商",
 appbuilder.add_view(ApiGroupModelView, "接口分组",
                     icon="fa-database", category="数据分组-必填项")
 
-appbuilder.add_view(PresentSalesModelView, "当前采购价格",
-                    icon="fa-database", category="数据分组-必填项")
-
-appbuilder.add_view(SalesModelView, "服务商报价",
-                    icon="fa-database", category="数据分组-选填项")
 
 appbuilder.add_view(SalesMethodModelView, "计费方式",
                     icon="fa-database", category="数据分组-必填项")
@@ -221,8 +216,6 @@ appbuilder.add_view(ApiTypeModelView, "Api适用对象",
 appbuilder.add_view(SignContractModelView, "合同签订事宜",
                     icon="fa-database", category="数据分组-必填项")
 
-appbuilder.add_view(RemarksModelView, "备注",
-                    icon="fa-database", category="数据分组-选填项")
 
 appbuilder.add_view(UpdateSpeedModelView, "数据时效性",
                     icon="fa-database", category="数据分组-选填项")
