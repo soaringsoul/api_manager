@@ -171,7 +171,7 @@ class UpdateSpeedModelView(ModelView):
 
 # 定义数据覆盖范围
 class CoverageModelView(ModelView):
-    datamodel = SQLAInterface(Updatespeed)
+    datamodel = SQLAInterface(Coverage)
     related_views = [DataServiceModelView]
     list_title = '覆盖范围'
     add_title = "添加%s" % list_title
