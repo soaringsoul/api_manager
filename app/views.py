@@ -18,14 +18,14 @@ class DataServiceModelView(ModelView):
                      'sales_method': '计费方式', 'api_group': '接口分组', 'sales': '服务商报价',
                      'input_params': '输入参数', 'sign_contract': '合同事宜',
                      'output_result': '输出结果', 'api_type': '适用对象', 'application_plat': '应用平台',
-                     'remarks': '备注', 'present_sales': '当前价格', 'update_speed': '数据时效性',
+                     'remarks': '备注', 'present_sales': '当前价格(元/次)', 'update_speed': '数据时效性',
                      'coverage': '覆盖范围'
                      }
     # 定义查看界面，显示的字段
     # list_columns = ['api_name', 'provider', 'function', 'api_group', 'input_params', 'output_result',
     #                 'sales',  'sales_method', 'application_plat', 'api_type',
     #                 'sign_contract', 'remarks' ]
-    list_columns = ['api_name', 'provider', 'function', 'api_group', 'application_plat', 'api_type',
+    list_columns = ['api_name', 'provider',  'api_group', 'application_plat', 'api_type',
                     'sign_contract', 'present_sales', 'sales_method', 'coverage']
     # 定义添加记录界面显示的各个字段
     add_columns = ['name', 'provider', 'input_params', 'output_result', 'present_sales',
@@ -56,7 +56,7 @@ class DataServiceModelView(ModelView):
     show_fieldsets = [
         (
             '基本信息',
-            {'fields': ['name', 'provider', 'input_params', 'output_result', 'function', 'api_group',
+            {'fields': ['api_name', 'provider', 'input_params', 'output_result', 'function', 'api_group',
                         'present_sales', 'sales', 'sales_method','update_speed', 'coverage'
                         ]}),
         (
