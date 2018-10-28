@@ -8,7 +8,7 @@ import datetime
 import uuid
 
 
-# 定义数据服务商，如京东蓝鲸征集，星河数银等
+# 定义数据服务商，
 class Providers(Model):
     id = Column(Integer, primary_key=True)
     name = Column(String(50), unique=True, nullable=False)
