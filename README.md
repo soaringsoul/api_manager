@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # APi管理中心简单说明
 
 ----------
@@ -74,3 +75,6 @@
 *  增加或者修改api信息
 
 ![add_api](/screenshots/add_api.jpg)
+=======
+# api_manager
+>>>>>>> 334de22203441449a6bde012f0b483ed12f95fdf
