@@ -28,14 +28,23 @@
 
 本项目主要使用`flask-appbuilder`，更多设置的细节可以参考[Flask-AppBuilder文档](https://github.com/dpgaspar/Flask-AppBuilder)
 
-### 1 安装依赖
+### 1 安装依赖并配置`config.py`
 
-主要使用了以下python库，`pip install -r requirements.txt`安装即可：
+* `pip install -r requirements.txt`安装或者手动逐个安装
 
 	Flask-AppBuilder==1.12.0
 	PyMySQL==0.9.2
 	SQLAlchemy==1.2.12
 	WTForms==2.2.1
+
+* 配置`config.py`中 mysql连接信息
+
+	# The SQLAlchemy connection string.
+	SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://用户名:用户密码@Mysql_Host/数据库名'
+
+
+
+
 
 ### 2 创建管理员账户
 
