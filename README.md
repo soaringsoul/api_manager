@@ -39,8 +39,8 @@
 
 * 配置`config.py`中 mysql连接信息
 
-	# The SQLAlchemy connection string.
-	SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://用户名:用户密码@Mysql_Host/数据库名'
+		# The SQLAlchemy connection string.
+		SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://用户名:用户密码@Mysql_Host/数据库名'
 
 
 
