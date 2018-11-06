@@ -31,11 +31,11 @@
 ### 1 安装依赖并配置`config.py`
 
 * `pip install -r requirements.txt`安装或者手动逐个安装
-
-	Flask-AppBuilder==1.12.0
-	PyMySQL==0.9.2
-	SQLAlchemy==1.2.12
-	WTForms==2.2.1
+	
+		Flask-AppBuilder==1.12.0
+		PyMySQL==0.9.2
+		SQLAlchemy==1.2.12
+		WTForms==2.2.1
 
 * 配置`config.py`中 mysql连接信息
 
